@@ -1,0 +1,5 @@
+[package]
+
+name = "rust-xmpp"
+version = "0.0.1"
+authors = ["Alex Morton <mortonar01@gmail.com>"]
