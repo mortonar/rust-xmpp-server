@@ -1,4 +1,12 @@
 [root]
-name = "rust-xmpp"
+name = "rust-xmpp-server"
 version = "0.0.1"
+dependencies = [
+ "RustyXML 0.1.1 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
+name = "RustyXML"
+version = "0.1.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
 
