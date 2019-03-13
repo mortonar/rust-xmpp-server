@@ -15,6 +15,7 @@ impl XmppServer {
             sessions: Vec::new(),
         }
     }
+
     pub fn start(&mut self) {
         // listen on given port and address
         let listener =
@@ -38,8 +39,8 @@ impl XmppServer {
         for stream in listener.incoming() {
             match stream {
                 Ok(stream) => {
-                    let client_session = XmppClientSession::new(stream);
-                    client_session.start();
+                    let client_session = XmppClientSession::new();
+                    XmppClientSession::process_connection(&client_session, stream);
                     self.sessions.push(client_session);
                 }
                 Err(e) => {
