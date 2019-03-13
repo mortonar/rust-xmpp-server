@@ -8,7 +8,7 @@ pub struct XmppClientSession {
 impl XmppClientSession {
     pub fn new(tcp_stream: TcpStream) -> XmppClientSession {
         XmppClientSession {
-            tcp_stream: tcp_stream,
+            tcp_stream,
         }
     }
     pub fn start(&self) {

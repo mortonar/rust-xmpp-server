@@ -10,8 +10,8 @@ pub struct XmppServer {
 impl XmppServer {
     pub fn new(address: String, port: i32) -> XmppServer {
         XmppServer {
-            address: address,
-            port: port,
+            address,
+            port,
             sessions: Vec::new(),
         }
     }
