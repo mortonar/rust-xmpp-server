@@ -5,12 +5,13 @@ extern crate xml;
 
 use client_session::xml::reader::{EventReader, XmlEvent};
 
-pub struct XmppClientSession {
-}
+use stanzas;
+
+pub struct XmppClientSession {}
 
 impl XmppClientSession {
     pub fn new() -> XmppClientSession {
-        XmppClientSession { }
+        XmppClientSession {}
     }
 
     pub fn process_connection(session: &XmppClientSession, tcp_stream: TcpStream) {
@@ -19,12 +20,12 @@ impl XmppClientSession {
             println!("Starting new session...");
             for e in parser {
                 match e {
-                    Ok(XmlEvent::StartElement { name, .. }) => {
-                        println!("{}", name);
-                    },
+                    se @ Ok(XmlEvent::StartElement { .. }) => {
+                        println!("{:?}", se);
+                    }
                     Ok(XmlEvent::EndElement { name, .. }) => {
                         println!("{}", name);
-                    },
+                    }
                     _ => {}
                 }
             }

@@ -1,8 +1,11 @@
+extern crate xml;
+
 use server::XmppServer;
 use std::env;
 
 mod client_session;
 mod server;
+mod stanzas;
 
 fn main() {
     // parse port from command line
